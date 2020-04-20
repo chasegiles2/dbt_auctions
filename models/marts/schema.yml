@@ -1,0 +1,33 @@
+
+version: 2
+
+models:
+    - name: auction_attributes
+      description: "All auction attributes combined"
+      columns:
+          - name: auction_id
+            description: "auction id"
+            tests:
+                - unique
+                - not_null
+          - name: item_id
+          - name: item_name
+          - name: auction_link
+          - name: winner
+          - name: win_price
+          - name: actual_price
+          - name: voucher
+          - name: bidomatic_on
+          - name: price_difference
+          - name: hour_of_day
+          - name: min_retrieval_time
+          - name: max_retrieval_time
+          - name: duration_seconds
+          - name: is_auction_locked
+          - name: duration_when_locked_seconds
+          - name: price_when_locked
+          - name: count_distinct_bidders
+          - name: count_total_bids
+          - name: count_single_bid
+          - name: count_bidomatic
+          - name: count_winner_bids
