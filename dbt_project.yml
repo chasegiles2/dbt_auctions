@@ -26,6 +26,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   auctions:
     marts:
+        database: analytics
         materialized: table
-        auctions:
-          materialized: ephemeral
+    staging:
+      materialized: view
+      database: raw
