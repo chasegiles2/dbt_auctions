@@ -1,0 +1,63 @@
+
+version: 2
+
+models:
+    - name: bid
+      description: "bid response time and bid backs (not including any bids above 10 seconds)"
+      columns:
+          - name: bidder
+            tests:
+                - unique
+                - not_null
+          - name: avg_bid_response_time_seconds
+          - name: avg_bid_response_time_seconds_single
+          - name: avg_bid_response_time_seconds_single_locked
+          - name: count_bid_back
+          - name: count_bid_back_single
+          - name: count_bid_back_locked
+          - name: count_bid_back_single_locked
+          - name: count_bid_back_not_locked
+          - name: avg_bid_response_time_seconds
+          - name: count_bid_back_single_not_locked
+    - name: voucher
+      description: "user voucher bids won"
+      columns:
+          - name: bidder
+            tests:
+                - unique
+                - not_null
+          - name: count_voucher_bids
+    - name: value
+      description: "user value generated and bid ratio summary"
+      columns:
+          - name: bidder
+            tests:
+                - unique
+                - not_null
+          - name: max_bid_ratio
+          - name: count_auctions_locked
+          - name: count_wins
+          - name: count_wins_locked
+          - name: sum_value_won
+    - name: bidder
+      description: "user attributes"
+      columns:
+          - name: bidder
+            tests:
+                - unique
+                - not_null
+          - name: count_bids
+          - name: count_single_bid
+          - name: count_bidomatic_bid
+          - name: count_bid_locked
+          - name: count_bid_not_locked
+          - name: count_single_bid_not_locked
+          - name: count_single_bid_locked
+          - name: count_bidomatic_bid_not_locked
+          - name: count_bidomatic_bid_locked
+          - name: count_auctions
+          - name: min_retrieval_time
+          - name: max_retrieval_time
+          - name: duration_days
+          - name: count_active_days
+          - name: is_currently_active
